@@ -7,16 +7,16 @@ import Score from './components/Score';
 import MainPart from './components/MainPart';
 
 class App extends Component {
-  render() {
-    return (
-      <div>
-      <Header>1</Header>
-      <Score></Score>
-      <MainPart>1</MainPart>
-      <Footer>1</Footer></div>
-      
-      );
-  }
-}
+	render() {
+		return (
+			<div>
+			<Header>1</Header>
+			<Score></Score>
+			<MainPart>1</MainPart>
+			<Footer>1</Footer></div>
 
-export default App;
+			);
+		}
+	}
+
+	export default App;

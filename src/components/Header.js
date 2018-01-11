@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
-import "../materialize/css/materialize.css"
 
-// class Header extends Component {
-// 	render() {
-// 		return (
-// 			<h1>Helelo Vitaliy</h1>
-// 			);
-// 	}
-// }
 
-const Header = ()=>	<h1>Hello Test</h1>
+
+const Header = ()=>	{
+	return <nav>
+	<div class="nav-wrapper blue">
+	<a href="#" class="brand-logo">Logo</a>
+	<ul id="nav-mobile" class="right hide-on-med-and-down">
+	<li><a href="sass.html">Sass</a></li>
+	<li><a href="badges.html">Components</a></li>
+	<li><a href="collapsible.html">JavaScript</a></li>
+	</ul>
+	</div>
+	</nav>
+}
 export default Header;
