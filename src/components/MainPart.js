@@ -11,8 +11,10 @@ class MainPart extends Component{
 
 	//eventHandler for button
 	clickHandler = event =>{
+		//if not use this line - react CLI gives you a warning about direct usage of states
+		let score = this.state.score+1
 		this.setState({
-			[event.target.id]: this.state.score+=1
+			[event.target.id]: score
 		});
 	}
 
