@@ -14,9 +14,8 @@ class App extends Component {
 			<Score></Score>
 			<MainPart>1</MainPart>
 			<Footer>1</Footer></div>
-
 			);
-		}
 	}
+}
 
-	export default App;
+export default App;
