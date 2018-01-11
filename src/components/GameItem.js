@@ -1,13 +1,14 @@
 import React, {Component} from "react";
-
+import "./GameItem.css";
 
 class GameItem extends Component{
 	state = {
-		image:""
+		
 	};
+
 	render(){
 		return(
-			<img src="{this.props.image}" alt="Character"></img>
+			<img src={"/images/"+this.props.image} alt="Character" name={this.props.image}></img>
 			)
 	}
 }
