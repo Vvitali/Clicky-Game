@@ -22,8 +22,6 @@ class MainPart extends Component{
 		console.log(images)
 		//get names of files inside directory
 		console.log("File names:"+list);
-		const listLen = list.length;
-
 		for(let i=0; i<9; i++){
 			list.push(<GameItem images="{list[(Math.Random*listLen+1)*100]}"></GameItem>);
 		}
