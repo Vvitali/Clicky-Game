@@ -18,8 +18,7 @@ class MainPart extends Component{
 
 	displayGameItems = ()=>{
 		const list=[];
-		const testFolder = '.../images/';
-		const images = require.context('./images/', false, /\.(png|jpe?g|svg)$/);
+		const images = require.context('../../public/images', false, /\.(png|jpe?g|svg)$/);
 		console.log(images)
 		//get names of files inside directory
 		console.log("File names:"+list);
