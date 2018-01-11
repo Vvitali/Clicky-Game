@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import Score from './Score';
+import GameItem from "./GameItem";
+
 class MainPart extends Component{
+	;
 	state = {
 		score: 0,
 		totalScore: 0
@@ -12,6 +15,21 @@ class MainPart extends Component{
 			[event.target.id]: this.state.score+=1
 		});
 	}
+
+	displayGameItems = ()=>{
+		const list=[];
+		const testFolder = '.../images/';
+		const images = require.context('./images/', false, /\.(png|jpe?g|svg)$/);
+		console.log(images)
+		//get names of files inside directory
+		console.log("File names:"+list);
+		const listLen = list.length;
+
+		for(let i=0; i<9; i++){
+			list.push(<GameItem images="{list[(Math.Random*listLen+1)*100]}"></GameItem>);
+		}
+		return list;
+	}
 	render(){
 		return (
 			<main className="container">
@@ -21,6 +39,7 @@ class MainPart extends Component{
 			<h1>Hello Main Part {this.state.score}</h1>
 			<button className="btn" id="score" onClick={this.clickHandler}>Click me!</button>
 			<h2>Images:</h2>
+			{this.displayGameItems()}
 			</div>
 			<div class="col s2">
 			<Score></Score></div>

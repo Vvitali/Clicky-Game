@@ -1,4 +1,4 @@
-import React {Component} from "react";
+import React, {Component} from "react";
 
 
 class GameItem extends Component{
@@ -7,7 +7,9 @@ class GameItem extends Component{
 	};
 	render(){
 		return(
-			<img src="{this.props.image}">
+			<img src="{this.props.image}"></img>
 			)
 	}
 }
+
+export default GameItem;
