@@ -3,15 +3,16 @@ import Score from './Score';
 import GameItems from "./GameItem";
 
 class MainPart extends Component{
-
 	state = {
 		score: 0,
-		totalScore: 0
+		totalScore: 0,
+		clickedChars:[]
 	};
 
 	constructor(props){
 		super(props);
 		this.clickHandlerS = this.clickHandlerS.bind(this);
+		this.guessChar = this.guessChar.bind(this);
 	}
 
 	//eventHandler for button
@@ -19,11 +20,14 @@ class MainPart extends Component{
 		console.log(event.target.id)
 		//if not use this line - react CLI gives you a warning about direct usage of states
 		let score = this.state.score+1;
-		console.log(score)
 		this.setState({
 			[event.target.id]: score
 		});
-	}
+	};
+
+	guessChar = event =>{
+		console.log(event.target.getAttribute("char"));
+	};
 
 	render(){
 		return (
@@ -35,7 +39,7 @@ class MainPart extends Component{
 			<button className="btn" id="score" onClick={this.clickHandlerS}>Click me!</button>
 			</div>
 			<h2>Images:</h2>
-			<GameItems></GameItems>
+			<GameItems onClick={this.guessChar}></GameItems>
 
 			</div>
 			<div  className="col m2">
