@@ -26,11 +26,11 @@ class MainPart extends Component{
 	}
 
 	guessChar = event =>{
-		let char = event.target.getAttribute("char");
+		let char = event.target.getAttribute("char"),score;
 		var updatedState = this.state.clickedChars;
-		this.state.clickedChars[char]? console.log("You lose!") : console.log(char+" ok");
+		this.state.clickedChars[char]? score = 0: score = this.state.score+1;
 		updatedState[char]=true;
-		let score = this.state.score+1;
+		
 		this.setState({
 			clickedChars : updatedState, score: score
 		});
