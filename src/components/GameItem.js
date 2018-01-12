@@ -2,23 +2,31 @@ import React, {Component} from "react";
 import "./GameItem.css";
 
 class GameItem extends Component{
-	state = {
-		
+	constructor() {
+		super();
+		this.state = {};
+		this.displayGameItems = ()=>{
+			let list=[];
+			let images = require.context('../../public/images', false, /\.(png|jpe?g|svg)$/);
+			images = images.keys().map(function(image){
+				return image;
+			});
+			let len = images.length;
+			for (let i=0; i<9; i++){
+				list.push(<img key={Math.floor((Math.random()*1239))} src={"/images/"+ images[Math.floor((Math.random()*len))]} alt="Character" name={images[i].image}></img>);
+			}
+			return list;
+		}; 
+		this.list =this.displayGameItems();
 	};
 
-	displayGameItems = ()=>{
-		const list=[];
-		let images = require.context('../../public/images', false, /\.(png|jpe?g|svg)$/);
-		return images.keys().map(function(image){
-			return <img key={image.key} src={"/images/"+ image} alt="Character" name={image}></img>
-		})
-	};
+	newRound = ()=>{
+		
+	}
 
 	render(){
-		return(
-			this.displayGameItems()
-			)
+		return this.list
 	}
 }
 
-export default GameItem;
+export default GameItem;  
