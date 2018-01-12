@@ -27,7 +27,9 @@ class GameItem extends Component{
 		this.clickHandler = this.clickHandler.bind(this);
 	};
 	clickHandler = event=>{
-		this.props.onClick(event)
+		this.list =this.displayGameItems();
+		this.props.onClick(event);
+
 	}
 	render(){
 		return this.list

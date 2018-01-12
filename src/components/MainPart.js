@@ -6,7 +6,18 @@ class MainPart extends Component{
 	state = {
 		score: 0,
 		totalScore: 0,
-		clickedChars:[]
+		clickedChars:{"bb-8": false
+		, "boba-fett": false
+		, "c-3po": false
+		, "chewbacca": false
+		, "darth-vader": false
+		, "darth_maul": false
+		, "princess_amidala": false
+		, "r2-d2": false
+		, "royal_guard": false
+		, "stormtrooper": false
+		, "the_emperor": false
+		, "yoda": false}
 	};
 
 	constructor(props){
@@ -26,7 +37,14 @@ class MainPart extends Component{
 	};
 
 	guessChar = event =>{
-		console.log(event.target.getAttribute("char"));
+		let char = event.target.getAttribute("char");
+		var updatedState = this.state.clickedChars;
+		this.state.clickedChars[char]? console.log("You lose!") : console.log("You win!");
+		updatedState[char]=true;
+		this.setState({
+			clickedChars : updatedState
+		});
+		console.log(this.state.clickedChars[char]);
 	};
 
 	render(){
