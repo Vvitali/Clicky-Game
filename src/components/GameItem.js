@@ -8,7 +8,7 @@ class GameItem extends Component{
 
 	render(){
 		return(
-			<img src={"/images/"+this.props.image} alt="Character" name={this.props.image}></img>
+			<img key={this.props.key} src={"/images/"+this.props.image} alt="Character" name={this.props.image}></img>
 			)
 	}
 }

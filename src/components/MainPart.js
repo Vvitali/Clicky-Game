@@ -10,7 +10,6 @@ class MainPart extends Component{
 
 	//eventHandler for button
 	clickHandler = event =>{
-		const {name, value} = event.target;
 		event.preventDefault();
 		//if not use this line - react CLI gives you a warning about direct usage of states
 		let score = this.state.score+1
@@ -27,7 +26,7 @@ class MainPart extends Component{
 		})
 		//get names of files inside directory
 		for(let i=0; i<9; i++){
-			list.push(<GameItem image={images[Math.floor((Math.random()*10+1))]}></GameItem>);
+			list.push(<GameItem key={i} image={images[Math.floor((Math.random()*10+1))]}></GameItem>);
 		};
 
 
@@ -39,7 +38,7 @@ class MainPart extends Component{
 			<div className="row">
 			<div className="col s12 m10">
 
-			<h1>Hello Main Part {this.state.score}</h1>
+			<h1 key="1">Hello Main Part {this.state.score}</h1>
 			<button className="btn" id="score" onClick={this.clickHandler}>Click me!</button>
 			<h2>Images:</h2>
 			{this.displayGameItems()}
