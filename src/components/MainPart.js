@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Score from './Score';
-import GameItem from "./GameItem";
+import GameItems from "./GameItem";
 
 class MainPart extends Component{
 	state = {
@@ -26,7 +26,7 @@ class MainPart extends Component{
 		})
 		//get names of files inside directory
 		for(let i=0; i<9; i++){
-			list.push(<GameItem key={i} image={images[Math.floor((Math.random()*10+1))]}></GameItem>);
+			list.push(<GameItems number={i*234} image={images[Math.floor((Math.random()*10+1))]}></GameItems>);
 		};
 
 
@@ -37,13 +37,15 @@ class MainPart extends Component{
 			<main className="container">
 			<div className="row">
 			<div className="col s12 m10">
-
-			<h1 key="1">Hello Main Part {this.state.score}</h1>
+			<div className="row">
+			<h1 id="1" key="asda">Hello Main Part {this.state.score}</h1>
 			<button className="btn" id="score" onClick={this.clickHandler}>Click me!</button>
-			<h2>Images:</h2>
-			{this.displayGameItems()}
 			</div>
-			<div className="col m2">
+			<h2>Images:</h2>
+			<GameItems></GameItems>
+
+			</div>
+			<div  className="col m2">
 			<Score></Score></div>
 			</div>
 			</main>
