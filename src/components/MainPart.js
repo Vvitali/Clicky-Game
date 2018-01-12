@@ -39,17 +39,18 @@ class MainPart extends Component{
 	render(){
 		return (
 			<main className="container">
+			<h1 id="1" key="asda">Hello %username%</h1>
 			<div className="row">
 			<div className="col s12 m9">
-			<div className="row">
-			<h1 id="1" key="asda">Hello %username%</h1>
-			</div>
+			
 			<h2>Images:</h2>
 			<GameItems onClick={this.guessChar}></GameItems>
-
 			</div>
+
 			<div className="col m3">
-			<Score score={this.state.score}></Score></div>
+			<Score score={this.state.score}></Score>
+			</div>
+			
 			</div>
 			</main>
 			);
