@@ -28,9 +28,14 @@ class MainPart extends Component{
 	guessChar = event =>{
 		let char = event.target.getAttribute("char"),score;
 		var updatedState = this.state.clickedChars;
-		this.state.clickedChars[char]? score = 0: score = this.state.score+1;
-		updatedState[char]=true;
-		
+		if(this.state.clickedChars[char]){
+			score = 0;
+
+		}else{
+			score = this.state.score+1;
+			updatedState[char]=true;
+		}
+
 		this.setState({
 			clickedChars : updatedState, score: score
 		});
@@ -38,16 +43,13 @@ class MainPart extends Component{
 
 	render(){
 		return (
-			<main className="container">
-			<h1 id="1" key="asda">Hello %username%</h1>
+			<main className="container center-align">
+			<h2 id="1" key="asda" class="hide-on-small-only">Hello %username%</h2>
 			<div className="row">
 			<div className="col s12 m9">
-			
-			<h2>Images:</h2>
 			<GameItems onClick={this.guessChar}></GameItems>
 			</div>
-
-			<div className="col m3">
+			<div className="col m3 ">
 			<Score score={this.state.score}></Score>
 			</div>
 			
