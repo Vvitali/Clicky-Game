@@ -30,6 +30,9 @@ class MainPart extends Component{
 		var updatedState = this.state.clickedChars;
 		if(this.state.clickedChars[char]){
 			score = 0;
+			for(let name in updatedState){
+				updatedState[name]=false;
+			}
 
 		}else{
 			score = this.state.score+1;

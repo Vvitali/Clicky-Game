@@ -5,10 +5,6 @@ class GameItem extends Component{
 	constructor() {
 		super();
 
-		this.state={
-			newRound:0
-		};
-
 		this.displayGameItems = ()=>{
 			let list=[];
 			let images = require.context('../../public/images', false, /\.(png|jpe?g|svg)$/);
