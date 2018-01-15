@@ -36,6 +36,7 @@ class MainPart extends Component{
 
 		}else{
 			score = this.state.score+1;
+			score > this.state.bestScore && this.setState({bestScore:  score})
 			updatedState[char]=true;
 		}
 
@@ -47,13 +48,13 @@ class MainPart extends Component{
 	render(){
 		return (
 			<main className="container center-align">
-			<h2 id="1" key="asda" class="hide-on-small-only">Hello %username%</h2>
+			<h2 id="1" key="asda" className="hide-on-small-only">Hello %username%</h2>
 			<div className="row">
 			<div className="col s12 m9">
 			<GameItems onClick={this.guessChar}></GameItems>
 			</div>
 			<div className="col m3 ">
-			<Score score={this.state.score}></Score>
+			<Score score={this.state.score} bScore={this.state.bestScore}></Score>
 			</div>
 			
 			</div>
